@@ -11,19 +11,19 @@ variables:
   azureServiceConnectionId: 'c6015594-1ab2-49e7-8682-42eaa4bfb931'
 
   # Web app name
-  webAppName: 'MyApp-flask'
+  webAppName: 'flask-azure-enam'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
   # Environment name
-  environmentName: 'MyApp-flask'
+  environmentName: 'flask-azure'
 
   # Project root folder. Point to the folder containing manage.py file.
   projectRoot: $(System.DefaultWorkingDirectory)
 
-  # Python version: 3.7
-  pythonVersion: '3.7'
+  # Python version: 3.8
+  pythonVersion: '3.8'
 
 stages:
 - stage: Build
@@ -80,7 +80,7 @@ stages:
             displayName: 'Use Python version'
 
           - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App : MyApp-flask'
+            displayName: 'Deploy Azure Web App : flask-azure-enam'
             inputs:
               azureSubscription: $(azureServiceConnectionId)
               appName: $(webAppName)
